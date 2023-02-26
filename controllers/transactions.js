@@ -17,7 +17,7 @@ exports.getTransactions = async (req, res, next) => {
         .exec();
 
         return res.status(200).send(transactions_list.map(transaction => ({
-            _id: transaction._id,
+            id: transaction._id,
             walletId: transaction.walletId,
             amount: Number(transaction.amount),
             balance: Number(transaction.balance),
