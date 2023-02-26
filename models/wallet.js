@@ -16,9 +16,6 @@ const walletSchema = new schema(
             get: value => parseFloat(value.toString()).toFixed(4),
             set: value => new mongoose.Types.Decimal128(parseFloat(value).toFixed(4)),
         },
-        transactionId: {
-            type: String,
-        },
         date: {
             type: Date,
             default: Date.now,

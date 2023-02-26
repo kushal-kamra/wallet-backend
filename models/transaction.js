@@ -6,7 +6,7 @@ const transactionSchema = new schema(
     {
         walletId: {
             type: String,
-            required: true,
+            // required: true,
         },
         amount: {
             type: mongoose.Decimal128,

@@ -8,17 +8,23 @@ exports.walletSetup = async (req, res, next) => {
         const wallet = new Wallet({
             name: name,
             balance: Number(balance),
-            transactionId: uuid.v4(),
         });
     
         const result = await wallet.save();
 
-        return res.status(200).json({
-            id: result["_id"],
-            balance: result["balance"].toString(),
-            transactionId: result['transactionId'],
-            name: result["name"],
-            date: result["date"],
+        if (result !== null) {
+            return res.status(200).json({
+                id: result["_id"],
+                balance: result["balance"].toString(),
+                transactionId: result["_id"],
+                name: result["name"],
+                date: result["date"],
+            });
+        }
+
+        return res.status(500).json({
+            success: false,
+            message: "Unable to create a wallet"
         });
     } catch(err) {
         console.log("Error in creating new wallet, ", err);
