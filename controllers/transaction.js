@@ -52,15 +52,11 @@ exports.createTransaction = async (req, res, next) => {
             }
         }
 
-        console.log("Error in creating new transaction, wallet not found");
-
         return res.status(500).json({
             success: false,
             message: "Error in creating new transaction, wallet not found"
         });
     } catch(err) {
-        console.log("Error in creating new transaction, ", err);
-
         return res.status(500).json({
             success: false,
             message: "Unable to create a transaction"
