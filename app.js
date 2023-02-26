@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 
 const indexRouter = require('./routes/index');
 const setupRouter = require('./routes/setup');
-const transactRouter = require('./routes/transact');
+const transactionRouter = require('./routes/transaction');
 
 const app = express();
 
@@ -39,7 +39,7 @@ async function mongo_connect() {
 
 app.use('/', indexRouter);
 app.use('/setup', setupRouter);
-app.use('/transact', transactRouter);
+app.use('/transact', transactionRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

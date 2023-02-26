@@ -21,7 +21,6 @@ exports.walletSetup = async (req, res, next) => {
             date: result["date"],
         });
     } catch(err) {
-
         console.log("Error in creating new wallet, ", err);
 
         return res.status(500).json({
