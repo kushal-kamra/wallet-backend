@@ -1,6 +1,5 @@
 const Wallet = require('../models/wallet');
 const Transaction = require('../models/transaction');
-const uuid = require('uuid');
 
 exports.createTransaction = async (req, res, next) => {
     try {
