@@ -1,0 +1,7 @@
+{
+    "db": {
+        "conn-url": "mongodb+srv://walletdefaultuser:KDnKyAtiXTYyPX36@wallet.yno8sqq.mongodb.net/?retryWrites=true&w=majority",
+        "username": "walletdefaultuser",
+        "password": "KDnKyAtiXTYyPX36"
+    }
+}
