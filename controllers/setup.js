@@ -16,7 +16,6 @@ exports.walletSetup = async (req, res, next) => {
             return res.status(200).json({
                 id: result["_id"],
                 balance: result["balance"].toString(),
-                transactionId: result["_id"],
                 name: result["name"],
                 date: result["date"],
             });
