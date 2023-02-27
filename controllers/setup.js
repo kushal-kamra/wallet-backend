@@ -9,9 +9,13 @@ exports.walletSetup = async (req, res, next) => {
     const session = await mongoose.startSession();
 
     try {
-        await session.startTransaction();
-
         const { name, balance } = req.body;
+
+        if (Number(balance) < 0) {
+            return res.status(200).send("Cannot create wallet with negative balance. Try again with positive balance");
+        }
+        
+        await session.startTransaction();
 
         const wallet = new Wallet({
             name: name,

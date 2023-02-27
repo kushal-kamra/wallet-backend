@@ -8,8 +8,6 @@ exports.createTransaction = async (req, res, next) => {
     const session = await mongoose.startSession();
 
     try {
-        await session.startTransaction();
-
         const { walletId } = req.params;
         const { amount, description } = req.body;
         let type;
@@ -23,6 +21,12 @@ exports.createTransaction = async (req, res, next) => {
             else type = "DEBIT";
 
             const new_balance = Number(wallet[0].balance) + amount;
+
+            if (new_balance < 0) {
+                return res.status(200).send(`Insufficient balance, add ${-new_balance} in wallet and try again`);
+            }
+
+            await session.startTransaction();
 
             const updated_wallet = await Wallet.findOneAndUpdate(
                 {
