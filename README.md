@@ -22,6 +22,7 @@ Request body:
     "balance": 20,
     "name": "Hello world"
     }
+```
 
 Requested balance can be decimal up to 4 precision points. E.g. 20.5612
 
