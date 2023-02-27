@@ -19,27 +19,26 @@ API Endpoints
     Request body:
 
 ```json
-    {
-    "balance": 20,
-    "name": "Hello world"
-    }
+{
+    "name": "Wallet H",
+    "balance": 100
+}
 ```
 
-Requested balance can be decimal up to 4 precision points. E.g. 20.5612
+    Requested balance can be decimal up to 4 precision points. E.g. 20.5612
 
-Response:
+    Response:
 
-Status 200 OK
+    Status 200 OK
 
-json
-Copy code
+```json
 {
-  "id": "60970c14aae6a16f4707b054",
-  "balance": 20,
-  "transactionId": "4349349843",
-  "name": "Hello world",
-  "date": "2022-02-01T12:00:00.000Z"
+    "id": "63fc5073d3a54f72403c9356",
+    "balance": "100.0000",
+    "name": "Wallet H",
+    "date": "2023-02-27T06:40:51.784Z"
 }
+```
 Credit/Debit amount
 Credit or debit the requested amount to the wallet.
 
