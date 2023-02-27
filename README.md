@@ -9,13 +9,14 @@ This is a backend service for a wallet system that supports the following operat
 
 API Endpoints
 1. Setup and initialize wallet
-Setup a new wallet with initial balance.
 
-URL: /setup
+    Setup a new wallet with initial balance.
 
-Method: POST
+    URL: /setup
 
-Request body:
+    Method: POST
+
+    Request body:
 
 ```json
     {
