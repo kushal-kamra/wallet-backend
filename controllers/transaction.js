@@ -71,6 +71,8 @@ exports.createTransaction = async (req, res, next) => {
             message: "Error in creating new transaction, wallet not found"
         });
     } catch(err) {
+        session.abortTransaction();
+        
         return res.status(500).json({
             success: false,
             message: "Unable to create a transaction"
