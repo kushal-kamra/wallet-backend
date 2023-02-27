@@ -1,13 +1,13 @@
 # wallet-backend
 Wallet System API
-***
+**
 This is a backend service for a wallet system that supports the following operations:
 
 1. Setup wallet
 2. Credit / Debit transactions
 3. Fetching transactions on wallet
 4. Get wallet details
-***
+**
 
 ### API Endpoints
 ##### 1. Setup and initialize wallet
