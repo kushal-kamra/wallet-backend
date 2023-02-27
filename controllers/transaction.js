@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Wallet = require('../models/wallet');
 const Transaction = require('../models/transaction');
 
-const session = await mongoose.startSession();
+const session = mongoose.startSession();
 
 exports.createTransaction = async (req, res, next) => {
     try {
@@ -72,7 +72,7 @@ exports.createTransaction = async (req, res, next) => {
         });
     } catch(err) {
         session.abortTransaction();
-        
+
         return res.status(500).json({
             success: false,
             message: "Unable to create a transaction"
