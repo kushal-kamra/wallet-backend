@@ -25,13 +25,11 @@ API Endpoints
 }
 ```
 
-
     Requested balance can be decimal up to 4 precision points. E.g. 20.5612
 
     Response:
 
     Status 200 OK
-
 
 ```json
 {
@@ -41,6 +39,7 @@ API Endpoints
     "date": "2023-02-27T06:40:51.784Z"
 }
 ```
+
 Credit/Debit amount
 Credit or debit the requested amount to the wallet.
 
