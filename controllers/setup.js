@@ -61,6 +61,8 @@ exports.walletSetup = async (req, res, next) => {
     } catch(err) {
         await session.abortTransaction();
 
+        console.log("Error in Setup : ", err);
+
         return res.status(500).json({
             success: false,
             message: "Unable to create a wallet"
