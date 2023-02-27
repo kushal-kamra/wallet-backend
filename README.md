@@ -139,3 +139,31 @@ description: Description of transaction
 date: Timestamp of transaction
 type: Type of transaction (CREDIT/DEBIT)
 ```
+
+
+### 4. Get Wallet details
+
+Given wallet id, fetch the wallet details
+
+URL: /wallet/:walletId
+
+Method: GET
+
+Request parameters:
+
+```
+walletId - id of the wallet to be fetched
+```
+
+Response:
+
+Status 200 OK
+
+```json
+{
+    "balance": "124.0000",
+    "id": "63fc5073d3a54f72403c9356",
+    "name": "Wallet H",
+    "date": "2023-02-27T06:40:51.784Z"
+}
+```
