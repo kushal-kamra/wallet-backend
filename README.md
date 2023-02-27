@@ -25,11 +25,13 @@ API Endpoints
 }
 ```
 
+
     Requested balance can be decimal up to 4 precision points. E.g. 20.5612
 
     Response:
 
     Status 200 OK
+
 
 ```json
 {
