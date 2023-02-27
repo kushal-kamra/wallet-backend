@@ -130,7 +130,7 @@ Status 200 OK
 ```
 The response for this API is an array of transactions where each transaction object consists of the following properties:
 
-```json
+```
 id: Transaction id
 walletId: Id of wallet
 amount: Transaction amount
