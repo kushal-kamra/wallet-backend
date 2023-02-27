@@ -3,12 +3,12 @@ const mongoose = require('mongoose');
 const Wallet = require('../models/wallet');
 const Transaction = require('../models/transaction');
 
-const session = mongoose.startSession();
-
 exports.createTransaction = async (req, res, next) => {
-    try {
 
-        session.startTransaction();
+    const session = await mongoose.startSession();
+
+    try {
+        await session.startTransaction();
 
         const { walletId } = req.params;
         const { amount, description } = req.body;
@@ -54,7 +54,7 @@ exports.createTransaction = async (req, res, next) => {
                 const transaction_result = await transaction.save();
 
                 if (transaction_result !== null) {
-                    session.commitTransaction();
+                    await session.commitTransaction();
 
                     return res.status(200).json({
                         balance: updated_wallet["balance"].toString(),
@@ -64,20 +64,20 @@ exports.createTransaction = async (req, res, next) => {
             }
         }
 
-        session.abortTransaction();
+        await session.abortTransaction();
 
         return res.status(500).json({
             success: false,
             message: "Error in creating new transaction, wallet not found"
         });
     } catch(err) {
-        session.abortTransaction();
+        await session.abortTransaction();
 
         return res.status(500).json({
             success: false,
             message: "Unable to create a transaction"
         });
     } finally {
-        session.endSession();
+        await session.endSession();
     }
 }
