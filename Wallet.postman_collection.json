@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "1d733152-cb77-479c-85b9-ff42d74583ed",
+		"name": "Wallet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21787884"
+	},
+	"item": [
+		{
+			"name": "setup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Wallet J\",\n    \"balance\": 100\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://wallet-1sqh.onrender.com/setup",
+					"protocol": "https",
+					"host": [
+						"wallet-1sqh",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"setup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transact",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\": 24,\n    \"description\": \"Recharge\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://wallet-1sqh.onrender.com/transact/63ff20122c9db957bf943bb9",
+					"protocol": "https",
+					"host": [
+						"wallet-1sqh",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"transact",
+						"63ff20122c9db957bf943bb9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://wallet-1sqh.onrender.com/transactions?walletId=63ff57d349f5bdef041f6772&skip=0&limit=10",
+					"protocol": "https",
+					"host": [
+						"wallet-1sqh",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"transactions"
+					],
+					"query": [
+						{
+							"key": "walletId",
+							"value": "63ff57d349f5bdef041f6772"
+						},
+						{
+							"key": "skip",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "wallet",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://wallet-1sqh.onrender.com/wallet/63fc5ca9831b108b21914e09",
+					"protocol": "https",
+					"host": [
+						"wallet-1sqh",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"wallet",
+						"63fc5ca9831b108b21914e09"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
