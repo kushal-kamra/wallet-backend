@@ -1,6 +1,9 @@
 # wallet-backend
 Wallet System API
 
+Service is deployed on Render with base url - https://wallet-1sqh.onrender.com/
+Postman collection with file name is added in this repo - Wallet.postman_collection.json
+
 This is a backend service for a wallet system that supports the following operations:
 
 1. Setup wallet
